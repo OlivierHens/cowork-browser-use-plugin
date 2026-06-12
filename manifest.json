@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.28",
+  "version": "0.1.0",
+  "id": "7f8c2e1a-3b4d-4f5e-9a6b-1c2d3e4f5a6b",
+  "developer": {
+    "name": "Olivier Hens",
+    "websiteUrl": "https://github.com/OlivierHens/cowork-browser-use-plugin",
+    "privacyUrl": "https://github.com/OlivierHens/cowork-browser-use-plugin#privacy",
+    "termsOfUseUrl": "https://github.com/OlivierHens/cowork-browser-use-plugin#license"
+  },
+  "name": {
+    "short": "Browser Use",
+    "full": "Browser Use for Copilot Cowork"
+  },
+  "description": {
+    "short": "Lets Cowork drive a real web browser like a person.",
+    "full": "Adds a Browser Use connector and a human-like browsing skill so Copilot Cowork can navigate web pages, observe them with screenshots, and click and type as a human would — handling consent banners, verifying every action, and recovering from unexpected state."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#1F6FEB",
+  "agentSkills": [
+    { "folder": "./skills/browser-use" }
+  ],
+  "agentConnectors": [
+    {
+      "id": "browser-use-mcp",
+      "displayName": "Browser Use",
+      "description": "Remote browser-automation MCP server: navigate, screenshot, click, type, scroll, and wait.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://REPLACE_ME.browser-use.example/mcp",
+          "authorization": {
+            "type": "ApiKeyPluginVault",
+            "referenceId": "REPLACE_WITH_OAUTH_OR_APIKEY_REGISTRATION_ID"
+          }
+        }
+      }
+    }
+  ]
+}

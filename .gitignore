@@ -1,0 +1,17 @@
+# Build artifact
+*.zip
+dist/
+
+# Editors
+.vscode/
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Node (in case anyone adds tooling later)
+node_modules/
